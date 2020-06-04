@@ -1,0 +1,23 @@
+<div class="my-auto" style="line-height: 48px;">
+  <div id="menucontainer" class="menucontainer" [@thingsappear]>
+    <ng-container *ngIf="!isMobileMenu">
+      <ng-container  *ngFor="let item of MENU; let i = index">
+        <div class="menuitem" (click)="onChangeMenu(item.name)" *ngIf="!isSmallerMenu && !isSmallestMenu" [@thingsappear]>{{item.name}}</div>
+        <div class="menuitem" (click)="onChangeMenu(item.name)" *ngIf="isSmallerMenu || isSmallestMenu" [@menu]="isSmallestMenu && !isMobileMenu" [@thingsappear]>
+          <fa-icon [icon]="item.icon" size="lg"></fa-icon>
+        </div>
+      </ng-container>
+    </ng-container>
+    <ng-container  *ngIf="isMobileMenu">
+      <button mat-button [matMenuTriggerFor]="mainmenu" class="menuicon" style="float: left" [@menu]="isMobileMenu" [@thingsappear]>
+        <fa-icon [icon]="menuIcon" size="lg" class="my-auto"></fa-icon>
+      </button>
+
+      <mat-menu #mainmenu="matMenu" class="m-0 p-0">
+        <ng-container *ngFor="let item of MENU; let i = index">
+          <button mat-menu-item (click)="onChangeMenu(item.name)">{{ item.name }}</button>
+        </ng-container>
+      </mat-menu>
+    </ng-container>
+  </div>
+</div>

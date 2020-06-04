@@ -1,0 +1,53 @@
+.menucontainer
+  height: 50px
+  overflow: hidden
+
+.menuitem
+  display: inline-block
+  background-color: transparent
+  color: white
+  font-size: 20px
+  padding: 0px 10px 0px 10px
+  margin: 0px 10px 0px 10px
+  border-bottom: 1px solid white
+
+.menuitem:hover
+  color: darkgoldenrod
+  cursor: pointer
+  border-bottom: 1px solid darkgoldenrod
+
+.menuicon
+  border: none
+  padding: 0px 0px 0px 20px
+  background-color: transparent
+  color: white
+  width: 35px
+  height: 35px
+  outline: none
+
+.menuicon:hover
+  color: darkgoldenrod
+
+::ng-deep .mat-menu-item
+  padding: none
+  padding-top: 0px 5px 0px 5px
+  border: none
+  outline: none
+
+::ng-deep .mat-focus-indicator
+  display: none
+  border: none
+  outline: none
+
+::ng-deep .mat-menu-content
+  display: block
+  width: 100%
+  background-color: white
+  border: none
+  outline: none
+
+::ng-deep .mat-menu-panel
+  width: 150px
+  background-color: white
+  border: none
+  outline: none

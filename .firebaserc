@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "lukkalinskiportfolio": {
+      "hosting": {
+        "LukaszKalinski": [
+          "lukkalinskiportfolio"
+        ]
+      }
+    }
+  }
+}

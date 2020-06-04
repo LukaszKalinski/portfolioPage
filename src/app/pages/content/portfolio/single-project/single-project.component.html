@@ -1,0 +1,88 @@
+<div class="row m-0 mb-2 mt-2 p-2 cont text-center mx-auto"
+(mouseenter)="onStartHover()" (mouseleave)="onEndHover()"
+(mousemove)="onHover($event)" [@filter]="isHover" [@thingsappear]>
+  <ng-container *ngIf="!isSmallerContainer" >
+    <div class="col-3 m-0 p-0 mx-auto my-auto" [@thingsappear]>
+      <div class="projectimg">
+        <img [src]="project.pictureUrl[0]">
+        <div class="imgurl">
+          <div class="row m-0 p-0">
+            <div class="col m-0 p-0">
+              <button class="btn btn-success"><a [href]="project.codeUrl" target="_blank">Code</a></button>
+            </div>
+            <div class="col m-0 p-0">
+              <button class="btn btn-warning"><a [href]="project.liveUrl" target="_blank">Live</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col m-0 p-0" [@thingsappear]>
+      <h3>{{ project.name }}</h3>
+      <div class="desc" style="width: 100%">{{ project.desc }}</div>
+      <div class="stack" style="width: 100%">
+        <h5>Technologies</h5>
+        <ng-container *ngFor="let technology of stackPairArr">
+          <div *ngIf="technology.is" style="display: inline-block;">
+            <img class="stackimg" src="https://cdn.iconscout.com/icon/premium/png-512-thumb/html5-3-502526.png" *ngIf="technology.name === 'isHTML'">
+            <img class="stackimg" src="https://cdn.iconscout.com/icon/free/png-512/css3-9-1175237.png" *ngIf="technology.name === 'isCSS'">
+            <img class="stackimg" src="https://cdn.iconscout.com/icon/free/png-512/sass-226054.png" *ngIf="technology.name === 'isSASS'">
+            <img class="stackimg" src="https://cdn.iconscout.com/icon/free/png-512/bootstrap-226077.png" *ngIf="technology.name === 'isBootstrap'">
+            <img class="stackimg" src="https://cdn.iconscout.com/icon/free/png-512/angular-2038881-1720094.png" *ngIf="technology.name === 'isAngular'">
+            <img class="stackimg" src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" *ngIf="technology.name === 'isJavascript'">
+            <img class="stackimg" src="https://cdn.iconscout.com/icon/free/png-512/typescript-1174965.png" *ngIf="technology.name === 'isTypescript'">
+            <img class="stackimg" src="https://cdn.iconscout.com/icon/free/png-512/mongodb-5-1175140.png" *ngIf="technology.name === 'isMongoDB'">
+            <img class="stackimg" src="https://cdn.iconscout.com/icon/free/png-256/firebase-1-282796.png" *ngIf="technology.name === 'isFirebase'">
+            <img class="stackimg" src="https://cdn.iconscout.com/icon/premium/png-512-thumb/rest-api-1-570529.png" *ngIf="technology.name === 'isRestAPI'">
+            <img class="stackimg" src="https://cdn.iconscout.com/icon/free/png-512/node-js-2-1174936.png" *ngIf="technology.name === 'isNodeJs'">
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="isSmallerContainer">
+    <div class="col m-0 p-0" [@thingsappear]>
+      <div class="row m-0 p-0">
+        <div class="col m-0 p-0">
+          <h3>{{ project.name }}</h3>
+          <div class="projectimg mx-auto">
+            <img [src]="project.pictureUrl[0]">
+            <div class="imgurl">
+              <div class="row m-0 p-0">
+                <div class="col m-0 p-0">
+                  <button class="btn btn-success"><a [href]="project.codeUrl" target="_blank">Code</a></button>
+                </div>
+                <div class="col m-0 p-0">
+                  <button class="btn btn-warning"><a [href]="project.liveUrl" target="_blank">Live</a></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row m-0 p-0">
+        <div class="col m-0 p-0">
+          <div class="desc" style="width: 100%">{{ project.desc }}</div>
+          <div class="stack" style="width: 100%">
+            <h5>Technologies</h5>
+            <ng-container *ngFor="let technology of stackPairArr">
+              <div *ngIf="technology.is" style="display: inline-block;">
+                <img class="stackimg" src="https://cdn.iconscout.com/icon/premium/png-512-thumb/html5-3-502526.png" *ngIf="technology.name === 'isHTML'">
+                <img class="stackimg" src="https://cdn.iconscout.com/icon/free/png-512/css3-9-1175237.png" *ngIf="technology.name === 'isCSS'">
+                <img class="stackimg" src="https://cdn.iconscout.com/icon/free/png-512/sass-226054.png" *ngIf="technology.name === 'isSASS'">
+                <img class="stackimg" src="https://cdn.iconscout.com/icon/free/png-512/bootstrap-226077.png" *ngIf="technology.name === 'isBootstrap'">
+                <img class="stackimg" src="https://cdn.iconscout.com/icon/free/png-512/angular-2038881-1720094.png" *ngIf="technology.name === 'isAngular'">
+                <img class="stackimg" src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" *ngIf="technology.name === 'isJavascript'">
+                <img class="stackimg" src="https://cdn.iconscout.com/icon/free/png-512/typescript-1174965.png" *ngIf="technology.name === 'isTypescript'">
+                <img class="stackimg" src="https://cdn.iconscout.com/icon/free/png-512/mongodb-5-1175140.png" *ngIf="technology.name === 'isMongoDB'">
+                <img class="stackimg" src="https://cdn.iconscout.com/icon/free/png-256/firebase-1-282796.png" *ngIf="technology.name === 'isFirebase'">
+                <img class="stackimg" src="https://cdn.iconscout.com/icon/premium/png-512-thumb/rest-api-1-570529.png" *ngIf="technology.name === 'isRestAPI'">
+                <img class="stackimg" src="https://cdn.iconscout.com/icon/free/png-512/node-js-2-1174936.png" *ngIf="technology.name === 'isNodeJs'">
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

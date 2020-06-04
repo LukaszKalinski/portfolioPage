@@ -1,0 +1,22 @@
+<div class="row m-0 p-0 w-100 h-100 background"
+[ngStyle]="{'opacity': 0.5 + loadingPerc/200, 'cursor': (isFullyLoaded ? 'default' : 'wait')}"
+[@isHome]="selectedItem === 'Home'"
+></div>
+
+<div class="row m-0 p-0 w-100 h-100" style="position: absolute; top: 0%; left: 0%">
+  <div class="col m-0 p-0 mx-auto my-auto text-center" >
+    <div *ngIf="isFullyLoaded">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<div (window:resize)="onResize()"></div>
+
+<div class="loading-container" *ngIf="!isFullyLoaded">
+  <div class=" mx-auto text-center">Loading... {{loadingPerc}}%</div><br>
+  <div style="display: inline">
+    <hr class='loadingBar' [ngStyle]="{'width': loadingBarWidth() + '%'}">
+    <img [@loadingContent] src="https://i.ibb.co/QK77HSn/logo-rastrowe-bez-t-a.png" style="align-content: left;width: 60px; height: 30px; padding-left: 10px;">
+  </div>
+</div>

@@ -1,0 +1,98 @@
+$inputfont: 16px
+$alertfont: 10px
+$inputcontheight: $inputfont + $alertfont + 24px
+
+.backdrop
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  background: rgb(0,0,0,0.75)
+  z-index: 50
+
+.container
+  display: block
+  border-radius: 20px
+  position: fixed
+  top: 50vh
+  left: 50vw
+  width: 80vw
+  min-width: 300px
+  max-width: 800px
+  padding: 16px
+  z-index: 100
+  background: white
+  box-shadow: 0 2px 8px rgba (0,0,0,0.26)
+  text-shadow: none
+  transform: translate(-50%,-50%)
+
+.closingbtn
+  position: absolute
+  top: 5px
+  right: 5px
+  z-index: 100
+  background: white
+  border: 1px solid white
+  border-radius: 50%
+  width: 30px
+  height: 30px
+
+.animationimg
+  width: 100%
+  height: auto
+
+.smallestanimation
+  width: 100px
+  height: auto
+
+.header
+  width: 100%
+  font-size: 30px
+  color: black
+  text-align: center
+
+.headersub
+  width: 100%
+  font-size: 12px
+  font-style: italic
+  color: black
+  text-align: center
+
+.inputcont
+  width: 50%
+  display: inline-block
+  font-size: $inputfont
+  height: $inputcontheight
+
+input
+  border: none
+  border-bottom: 1px solid gray
+  width: 95%
+  margin: 0px 1px 0px 1px
+
+input:focus
+  outline: none
+
+textarea
+  width: 100%
+  height: 100px
+  max-height: 300px
+  min-height: 50px
+
+textarea:focus
+  outline: none
+
+textarea:valid
+  background: transparent
+
+.alert
+  font-size: 10px
+  font-style: italic
+  height: 20px
+  float: right
+  color: red
+  padding-right: 5px
+
+.buttons
+  width: 100%

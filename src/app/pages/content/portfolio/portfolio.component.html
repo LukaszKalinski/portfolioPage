@@ -1,0 +1,14 @@
+<div>
+  <cdk-virtual-scroll-viewport itemSize="100" class="example-viewport" [ngStyle]="{'height': getContentHeight() + 'px'}" (scroll)="scrollDetected(virtualScroll)">
+    <ng-container *ngIf="!selectedProject">
+      <ng-container *ngFor="let project of allProjects">
+        <div class="text-center w-100">
+          <app-single-project [project]="project"></app-single-project>
+        </div>
+      </ng-container>
+    </ng-container>
+    <div class="topbtn" (click)="scrollTop(virtualScroll)" *ngIf="isScrolled" [@thingsappear]>
+      <fa-icon [icon]="upIcon" size="3x"></fa-icon>
+    </div>
+  </cdk-virtual-scroll-viewport>
+</div>

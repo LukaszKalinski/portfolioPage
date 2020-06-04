@@ -1,0 +1,18 @@
+<div class="row m-0 p-0 h-100 w-100">
+  <ng-container *ngIf="!isMobile">
+    <div class="col m-0 p-0 my-auto">
+      <app-header-menu></app-header-menu>
+    </div>
+    <div class="col-4 m-0 p-0 my-auto">
+      <app-header-icons></app-header-icons>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="isMobile">
+    <div class="col m-0 p-0 my-auto">
+      <app-header-menu></app-header-menu>
+    </div>
+    <div class="col m-0 p-0 my-auto">
+      <app-header-icons></app-header-icons>
+    </div>
+  </ng-container>
+</div>

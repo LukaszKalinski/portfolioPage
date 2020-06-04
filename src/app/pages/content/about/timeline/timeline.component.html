@@ -1,0 +1,24 @@
+<div [@thingsappear]>
+  <div class="title">
+    {{show === 'education' ? 'Education' : (show === 'experience' ? 'Experience' : "Other Experience")}}
+  </div>
+  <div class="timelinecont">
+    <div class="row timeline m-0 p-0" *ngFor="let item of showItem">
+      <div class="col-3 date m-0 mr-2 p-0">
+        {{ item.date }}
+      </div>
+      <div class="col m-0 p-0">
+        <div class="contentCont mb-2">
+          <div class="header">
+            {{ item.header }}
+          </div>
+          <div class="description">
+            <div [innerHTML]="item.desc"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

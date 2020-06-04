@@ -1,0 +1,200 @@
+<div class="backdrop" (click)="onClose()"></div>
+<div class="container" (mouseenter)="onAnimationStart()" (mouseleave)="onAnimationEnd()">
+  <ng-container *ngIf="!isSmaller && !isSmallest">
+    <div [@changingwindow]>
+      <button class="closingbtn" (click)="onClose()">x</button>
+      <div class="row m-0 p-0">
+        <div class="col-m-0 p-0 text-center mx-auto">
+          <div class="header text-center mx-auto">{{ 'Contact me' | uppercase}}</div>
+          <div class="headersub text-center mx-auto">{{offMsg}}</div>
+        </div>
+      </div>
+      <div class="row m-0 p-0">
+        <div class="col m-0 p-0 my-auto mx-auto">
+          <form [formGroup]="messageForm" (ngSubmit)="onSendMessage(messageForm)">
+            <div class="inputcont m-0 p-0">
+              <input
+              type="text"
+              formControlName="firstName"
+              placeholder="First Name"
+              >
+              <span class="alert m-0 p-0" *ngIf="messageForm.get('firstName').touched && !messageForm.get('firstName').valid">Required field.</span>
+            </div>
+            <div class="inputcont m-0 p-0">
+              <input
+              type="text"
+              formControlName="lastName"
+              placeholder="Last Name"
+              >
+              <span class="alert m-0 p-0" *ngIf="messageForm.get('lastName').touched && !messageForm.get('lastName').valid">Required field.</span>
+            </div>
+            <div class="inputcont m-0 p-0">
+              <input
+              type="email"
+              formControlName="email"
+              placeholder="E-mail"
+              >
+              <span class="alert m-0 p-0" *ngIf="messageForm.get('email').touched && !messageForm.get('email').valid">Required field.</span>
+            </div>
+            <div class="inputcont m-0 p-0">
+              <input
+              type="text"
+              formControlName="subject"
+              placeholder="Subject">
+              <span class="alert m-0 p-0" *ngIf="messageForm.get('subject').touched && !messageForm.get('subject').valid">Required field.</span>
+            </div>
+            <div class="text-field m-0 p-0">
+              <textarea
+              type="text"
+              formControlName="message"
+              placeholder="Message"
+              style="max-height: 300px;"></textarea>
+              <span class="alert m-0 p-0">{{ messageForm.get('message').touched && !messageForm.get('message').valid ? 'Required field.' : '' }}</span>
+            </div>
+            <div class="btn-group buttons">
+              <button class="btn btn-danger" type="button" (click)='onClear()'>Clear</button>
+              <button class="btn btn-primary" type="submit" [disabled]="!messageForm.valid">Send</button>
+            </div>
+          </form>
+        </div>
+        <div class="col m-0 p-0 my-auto mx-auto">
+          <img class="animationimg" [class.smallestanimation]="isSmallest" [@thingsappear] *ngIf="isHover" src="https://i.pinimg.com/originals/e7/30/ed/e730eda86a2907e172414b6168bd2bbf.gif">
+          <img class="animationimg" [class.smallestanimation]="isSmallest" [@thingsappear] style="filter: grayscale(100%)" *ngIf="!isHover" src="https://imgbbb.com/images/2020/06/02/anim.jpg">
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="isSmaller && !isSmallest">
+    <div [@changingwindow]>
+      <button class="closingbtn" (click)="onClose()">x</button>
+      <div class="row m-0 p-0">
+        <div class="col-m-0 p-0 text-center mx-auto">
+          <div class="header text-center mx-auto">{{ 'Contact me' | uppercase}}</div>
+          <div class="headersub text-center mx-auto">{{offMsg}}</div>
+        </div>
+      </div>
+      <div class="row m-0 p-0">
+        <div class="col m-0 p-0 my-auto mx-auto">
+          <form [formGroup]="messageForm" (ngSubmit)="onSendMessage(messageForm)">
+            <div class="inputcont m-0 p-0" style="width: 100%">
+              <input
+              type="text"
+              formControlName="firstName"
+              placeholder="First Name"
+              >
+              <span class="alert m-0 p-0" *ngIf="messageForm.get('firstName').touched && !messageForm.get('firstName').valid">Required field.</span>
+            </div>
+            <div class="inputcont m-0 p-0" style="width: 100%">
+              <input
+              type="text"
+              formControlName="lastName"
+              placeholder="Last Name"
+              >
+              <span class="alert m-0 p-0" *ngIf="messageForm.get('lastName').touched && !messageForm.get('lastName').valid">Required field.</span>
+            </div>
+            <div class="inputcont m-0 p-0" style="width: 100%">
+              <input
+              type="email"
+              formControlName="email"
+              placeholder="E-mail"
+              >
+              <span class="alert m-0 p-0" *ngIf="messageForm.get('email').touched && !messageForm.get('email').valid">Required field.</span>
+            </div>
+            <div class="inputcont m-0 p-0" style="width: 100%">
+              <input
+              type="text"
+              formControlName="subject"
+              placeholder="Subject">
+              <span class="alert m-0 p-0" *ngIf="messageForm.get('subject').touched && !messageForm.get('subject').valid">Required field.</span>
+            </div>
+            <div class="text-field m-0 p-0">
+              <textarea
+              type="text"
+              formControlName="message"
+              placeholder="Message"
+              style="max-height: 300px;"></textarea>
+              <span class="alert m-0 p-0">{{ messageForm.get('message').touched && !messageForm.get('message').valid ? 'Required field.' : '' }}</span>
+            </div>
+            <div class="btn-group buttons">
+              <button class="btn btn-danger" type="button" (click)='onClear()'>Clear</button>
+              <button class="btn btn-primary" type="submit" [disabled]="!messageForm.valid">Send</button>
+            </div>
+          </form>
+        </div>
+        <div class="col m-0 p-0 my-auto mx-auto">
+          <img class="animationimg" [class.smallestanimation]="isSmallest" [@thingsappear] *ngIf="isHover" src="https://i.pinimg.com/originals/e7/30/ed/e730eda86a2907e172414b6168bd2bbf.gif">
+          <img class="animationimg" [class.smallestanimation]="isSmallest" [@thingsappear] style="filter: grayscale(100%)" *ngIf="!isHover" src="https://imgbbb.com/images/2020/06/02/anim.jpg">
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="!isSmaller && isSmallest">
+    <div [@changingwindow]>
+      <button class="closingbtn" (click)="onClose()">x</button>
+      <div class="row m-0 p-0">
+        <div class="col-m-0 p-0 text-center mx-auto">
+          <div class="header text-center mx-auto">{{ 'Contact me' | uppercase}}</div>
+          <div class="headersub text-center mx-auto">{{offMsg}}</div>
+        </div>
+      </div>
+      <div class="row m-0 p-0">
+        <div class="col m-0 p-0 my-auto mx-auto">
+          <img class="animationimg" [class.smallestanimation]="isSmallest" [@thingsappear] *ngIf="isHover" src="https://i.pinimg.com/originals/e7/30/ed/e730eda86a2907e172414b6168bd2bbf.gif">
+          <img class="animationimg" [class.smallestanimation]="isSmallest" [@thingsappear] style="filter: grayscale(100%)" *ngIf="!isHover" src="https://imgbbb.com/images/2020/06/02/anim.jpg">
+        </div>
+      </div>
+      <div class="row m-0 p-0">
+        <div class="col m-0 p-0 my-auto mx-auto">
+          <form [formGroup]="messageForm" (ngSubmit)="onSendMessage(messageForm)">
+            <div class="inputcont m-0 p-0" style="width: 100%">
+              <input
+              type="text"
+              formControlName="firstName"
+              placeholder="First Name"
+              >
+              <span class="alert m-0 p-0" *ngIf="messageForm.get('firstName').touched && !messageForm.get('firstName').valid">Required field.</span>
+            </div>
+            <div class="inputcont m-0 p-0" style="width: 100%">
+              <input
+              type="text"
+              formControlName="lastName"
+              placeholder="Last Name"
+              >
+              <span class="alert m-0 p-0" *ngIf="messageForm.get('lastName').touched && !messageForm.get('lastName').valid">Required field.</span>
+            </div>
+            <div class="inputcont m-0 p-0" style="width: 100%">
+              <input
+              type="email"
+              formControlName="email"
+              placeholder="E-mail"
+              >
+              <span class="alert m-0 p-0" *ngIf="messageForm.get('email').touched && !messageForm.get('email').valid">Required field.</span>
+            </div>
+            <div class="inputcont m-0 p-0" style="width: 100%">
+              <input
+              type="text"
+              formControlName="subject"
+              placeholder="Subject">
+              <span class="alert m-0 p-0" *ngIf="messageForm.get('subject').touched && !messageForm.get('subject').valid">Required field.</span>
+            </div>
+            <div class="text-field m-0 p-0">
+              <textarea
+              type="text"
+              formControlName="message"
+              placeholder="Message"
+              style="max-height: 100px;"></textarea>
+              <span class="alert m-0 p-0">{{ messageForm.get('message').touched && !messageForm.get('message').valid ? 'Required field.' : '' }}</span>
+            </div>
+            <div class="btn-group buttons">
+              <button class="btn btn-danger" type="button" (click)='onClear()'>Clear</button>
+              <button class="btn btn-primary" type="submit" [disabled]="!messageForm.valid">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+
+

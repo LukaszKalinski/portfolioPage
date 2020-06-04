@@ -1,0 +1,22 @@
+<div class="context" *ngIf="selectedItem === 'Home'" [@item] [ngStyle]="{'height': getContentHeight() + 'px'}">
+  <div class="homemsg" *ngIf="!isSmallerMsg" [@message]>
+    {{'Junior' | uppercase}}<br>
+    {{'Front-End' | uppercase}}<br>
+    {{'Developer' | uppercase}}
+  </div>
+  <div class="homemsgsmall" *ngIf="isSmallerMsg" [@message]>
+    {{'Junior' | uppercase}}<br>
+    {{'Front-End' | uppercase}}<br>
+    {{'Developer' | uppercase}}
+  </div>
+</div>
+<div class="context" *ngIf="selectedItem === 'About me'" [@item]>
+  <app-about></app-about>
+</div>
+<div class="context" *ngIf="selectedItem === 'Portfolio'" [@item]>
+  <app-portfolio></app-portfolio>
+</div>
+
+<div class="contact" *ngIf="isContactClicked" [@contact]>
+  <app-contact  (contactClosed)="onCloseContact()"></app-contact>
+</div>
