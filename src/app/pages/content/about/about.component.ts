@@ -67,10 +67,9 @@ export class AboutComponent implements OnInit {
   }
 
   subscriptionsOnInit() {
-    const width = this.windowSizeService.getWindowSize().width;
-    this.isSmallerWindows(width);
+    this.isSmallerWindows(this.windowSizeService.getWindowSize().width);
     this.isSmallerWindowSub = this.windowSizeService.isWindowSizeChanged.subscribe(() => {
-      this.isSmallerWindows(width);
+      this.isSmallerWindows(this.windowSizeService.getWindowSize().width);
     });
     this.reloadImages();
   }

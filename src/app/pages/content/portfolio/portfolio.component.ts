@@ -84,7 +84,7 @@ export class PortfolioComponent implements OnInit {
         'https://github.com/LukaszKalinski/RPG-Game',
         'https://firstrpg-3e46e.web.app/',
         // tslint:disable-next-line: max-line-length
-        'This is online game, where You can raise Your hero as a knight, archer or wizard. There are many creatures, adventures and quest which You can discover on particular levels. You are able to work on various fighting, collecting and crafting skills.',
+        'This is online game, where You can raise Your hero as a knight, archer or wizard. There are many creatures, adventures and quests which You can discover on particular level. You are able to work on various fighting, collecting and crafting skills.',
         new ProjectStack(
           true, // isHTML: boolean
           true, // isCSS: boolean
