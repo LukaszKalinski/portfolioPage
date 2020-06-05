@@ -9,18 +9,18 @@
           <p>{{ firstMessage }}</p>
           <p>{{ secondMessage }}</p>
           <p>{{ thirddMessage }}</p>
-          <p>{{ fourthMessage }}</p>
           <div class="text-center" *ngIf="!isLoaded">
             <ng-container *ngFor="let image of technologyImg">
-              <img class="technimg" [src]="image" style="filter: grayscale(100%)">
+              <img class="technimg" [src]="image.url" [title]="image.hint" style="filter: grayscale(100%)">
             </ng-container>
           </div>
             <div class="text-center" *ngIf="isLoaded" [@entertechn]="technologyImg.length">
               <ng-container *ngFor="let image of technologyImg">
-                <img class="technimg" [src]="image">
+                <img class="technimg" [src]="image.url" [title]="image.hint">
               </ng-container>
             </div>
-          <p>{{ fifthMessage }}</p>
+            <p>{{ fourthMessage }}</p>
+            <p>{{ fifthMessage }}</p>
           <div class="btn-group mb-2">
             <button class="btn btn-primary bigbutton" (click)="onShowEducation()">{{ showEducation ? 'Hide Education' : 'Show Education'}}</button>
             <button class="btn btn-success bigbutton" (click)="onShowExperience()">{{ showExperience ? 'Hide Experience' : 'Show Experience'}}</button>
@@ -38,18 +38,19 @@
           <p>{{ firstMessage }}</p>
           <p>{{ secondMessage }}</p>
           <p>{{ thirddMessage }}</p>
-          <p>{{ fourthMessage }}</p>
+
           <div class="text-center" *ngIf="!isLoaded">
             <ng-container *ngFor="let image of technologyImg">
-              <img class="technimg" [src]="image" style="filter: grayscale(100%)">
+              <img class="technimg" [src]="image.url" [title]="image.hint" style="filter: grayscale(100%)">
             </ng-container>
           </div>
             <div class="text-center" *ngIf="isLoaded" [@entertechn]="technologyImg.length">
               <ng-container *ngFor="let image of technologyImg">
-                <img class="technimg" [src]="image">
+                <img class="technimg" [src]="image.url" [title]="image.hint">
               </ng-container>
             </div>
-          <p>{{ fifthMessage }}</p>
+            <p>{{ fourthMessage }}</p>
+            <p>{{ fifthMessage }}</p>
           <div class="btn-group mb-2">
             <button class="btn btn-primary" (click)="onShowEducation()" [ngStyle]="{'width': isSmallestWindow ? '30%' : '105px'}">{{ showEducation ? 'Hide Edu.' : 'Show Edu.'}}</button>
             <button class="btn btn-success" (click)="onShowExperience()" [ngStyle]="{'width': isSmallestWindow ? '30%' : '105px'}">{{ showExperience ? 'Hide Exp.' : 'Show Exp.'}}</button>

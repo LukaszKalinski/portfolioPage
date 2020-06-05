@@ -48,14 +48,17 @@ export class AboutComponent implements OnInit {
   showExperience = false;
   showOther = false;
   isScrolled = false;
-  technologyImg: string[] = [];
+  technologyImg: {url: string, hint: string}[] = [];
   upIcon = faArrowCircleUp;
+
+  // tslint:disable-next-line: max-line-length
   firstMessage = 'My name is Lukasz Kalinski and I am pretending to become Junior Front-End Developer.';
   secondMessage = 'Currently I am working as a Junior ServiceNow Developer, where I am using HTML, CSS, JS, Angular.';
+  thirddMessage = 'Below I present a list of technologies, which I am mostly using:';
   // tslint:disable-next-line: max-line-length
-  thirddMessage = 'On a personal level, I am highly-motivated, result oriented, self-driven, hard-working, fast learner and constantly seeking to improve my skills.';
-  fourthMessage = 'Below is a list of technologies, which I am mostly using:';
-  fifthMessage = 'I prefer to work with NoSQL databases using JSON format files.';
+  fourthMessage = 'On a personal level, I am highly-motivated, result oriented, self-driven, hard-working, fast learner and constantly seeking to improve my skills.';
+  // tslint:disable-next-line: max-line-length
+  fifthMessage = 'I love to play indoor/outdoor football games with friends and take care of my bonsai trees.';
 
   constructor(
     private windowSizeService: WindowSizeSevice,
@@ -103,14 +106,16 @@ export class AboutComponent implements OnInit {
 
   setTechnologyImages() {
     const a = this.technologyImg;
-    a.push('https://cdn.iconscout.com/icon/premium/png-512-thumb/html5-3-502526.png');
-    a.push('https://cdn.iconscout.com/icon/free/png-512/css3-9-1175237.png');
-    a.push('https://cdn.iconscout.com/icon/free/png-512/sass-226054.png');
-    a.push('https://cdn.iconscout.com/icon/free/png-512/bootstrap-226077.png');
-    a.push('https://cdn.iconscout.com/icon/free/png-512/angular-2038881-1720094.png');
-    a.push('https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png');
-    a.push('https://cdn.iconscout.com/icon/free/png-512/typescript-1174965.png');
-    a.push('https://cdn.iconscout.com/icon/free/png-512/node-js-2-1174936.png');
+    a.push({url: 'https://cdn.iconscout.com/icon/premium/png-512-thumb/html5-3-502526.png', hint: 'HTML5'});
+    a.push({url: 'https://cdn.iconscout.com/icon/free/png-512/css3-9-1175237.png', hint: 'CSS3'});
+    a.push({url: 'https://cdn.iconscout.com/icon/free/png-512/sass-226054.png', hint: 'SASS'});
+    a.push({url: 'https://cdn.iconscout.com/icon/free/png-512/bootstrap-226077.png', hint: 'Bootstrap 4'});
+    a.push({url: 'https://cdn.iconscout.com/icon/free/png-512/angular-2038881-1720094.png', hint: 'Angular 9'});
+    a.push({url: 'https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png', hint: 'Javascript'});
+    a.push({url: 'https://cdn.iconscout.com/icon/free/png-512/typescript-1174965.png', hint: 'Typescript'});
+    a.push({url: 'https://cdn.iconscout.com/icon/free/png-512/node-js-2-1174936.png', hint: 'Node.js'});
+    a.push({url: 'https://cdn.iconscout.com/icon/free/png-256/firebase-1-282796.png', hint: 'Firebase'});
+    a.push({url: 'https://cdn.iconscout.com/icon/free/png-512/git-225996.png', hint: 'Git'});
   }
 
   onShowEducation() {

@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import {
   faFacebook,
   faLinkedin,
-  faGoogle
+  faGithub
    } from '@fortawesome/free-brands-svg-icons';
 
 import { WindowSizeSevice } from 'src/app/services/window-size.service';
@@ -45,10 +45,10 @@ import { WindowSizeSevice } from 'src/app/services/window-size.service';
 export class HeaderIconsComponent implements OnInit {
   fbUrl = 'https://www.facebook.com/profile.php?id=100000462866542';
   linkedInUrl = 'https://www.linkedin.com/in/lukkalinski';
-  googleUrl = 'https://www.google.com';
+  githubUrl = 'https://github.com/LukaszKalinski';
   facebookIcon = faFacebook;
   linkedInIcon = faLinkedin;
-  googleIcon = faGoogle;
+  github = faGithub;
   isSmallerIcon = null;
   isWidthSub: Subscription;
 
@@ -75,8 +75,8 @@ export class HeaderIconsComponent implements OnInit {
       case 'linkedIn':
         window.open(this.linkedInUrl, '_blank');
         break;
-      case 'google':
-        window.open(this.googleUrl, '_blank');
+      case 'github':
+        window.open(this.githubUrl, '_blank');
         break;
       default:
         break;
