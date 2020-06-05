@@ -44,43 +44,12 @@ export class PortfolioComponent implements OnInit {
   ngOnInit(): void {
     this.allProjects = [
       new Project(
-        'RPG Game',
-        [
-          'https://i.ibb.co/SvnPb0P/Przechwytywanie.png',
-          'https://imgbbb.com/images/2020/06/04/inventory.png',
-          'https://imgbbb.com/images/2020/06/04/shop.png',
-          'https://imgbbb.com/images/2020/06/04/quests.png',
-          'https://imgbbb.com/images/2020/06/04/crafting.png',
-          'https://imgbbb.com/images/2020/06/04/fight.png',
-        ],
-        'https://github.com/LukaszKalinski/RPG-Game',
-        'https://firstrpg-3e46e.web.app/',
-        // tslint:disable-next-line: max-line-length
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi.Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat',
-        new ProjectStack(
-          true, // isHTML: boolean
-          true, // isCSS: boolean
-          false, // isSASS: boolean
-          true, // isBootstrap: boolean
-          true, // isAngular: boolean
-          false, // isJavascript: boolean
-          true, // isTypescript: boolean
-          false, // isMongoDB: boolean
-          true, // isFirebase: boolean
-          true, // isRestAPI: boolean
-          true, // isNodeJs: boolean}
-        ),
-        'rpggame',
-        // tslint:disable-next-line: max-line-length
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat',
-      ),
-      new Project(
         'Portfolio Page',
         ['https://imgbbb.com/images/2020/06/02/Przechwytywanie.png'],
         'https://github.com/LukaszKalinski/portfolioPage',
         'https://lukkalinskiportfolio.web.app',
         // tslint:disable-next-line: max-line-length
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat',
+        'This is my personal page, where You can find everything about my person and projects which I have created.',
         new ProjectStack(
           true, // isHTML: boolean
           false, // isCSS: boolean
@@ -94,9 +63,29 @@ export class PortfolioComponent implements OnInit {
           true, // isRestAPI: boolean
           true, // isNodeJs: boolean}
         ),
-        'portfolio',
+        'portfolio'
+      ),
+      new Project(
+        'RPG Game',
+        ['https://i.ibb.co/SvnPb0P/Przechwytywanie.png'],
+        'https://github.com/LukaszKalinski/RPG-Game',
+        'https://firstrpg-3e46e.web.app/',
         // tslint:disable-next-line: max-line-length
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat',
+        'This is online game, where You can raise Your hero as a knight, archer or wizard. There are many creatures, adventures and quest which You can discover on particular levels. You are able to work on various fighting, collecting and crafting skills.',
+        new ProjectStack(
+          true, // isHTML: boolean
+          true, // isCSS: boolean
+          false, // isSASS: boolean
+          true, // isBootstrap: boolean
+          true, // isAngular: boolean
+          false, // isJavascript: boolean
+          true, // isTypescript: boolean
+          false, // isMongoDB: boolean
+          true, // isFirebase: boolean
+          true, // isRestAPI: boolean
+          true, // isNodeJs: boolean}
+        ),
+        'rpggame'
       ),
     ];
     this.selectedProject = this.menuService.getSelectedProject();

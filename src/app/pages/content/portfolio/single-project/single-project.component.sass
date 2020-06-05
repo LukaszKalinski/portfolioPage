@@ -1,3 +1,9 @@
+$descheight: 120px
+
+.projectcont
+  display: inline-block
+  max-width: 450px
+
 .stackimg
   width: auto
   height: 75px
@@ -5,7 +11,6 @@
 
 .projectimg
   width: 100%
-  max-width: 500px
   height: auto
 
 .imgurl
@@ -21,11 +26,7 @@ img
   text-shadow: 0px 0px 5px black
   text-align: justify
   padding: 0px 5px 0px 5px
-  overflow: hidden
-  text-overflow: ellipsis
-  display: -webkit-box
-  -webkit-line-clamp: 5
-  -webkit-box-orient: vertical
+  min-height: $descheight
 
 .cont
   width: 90%

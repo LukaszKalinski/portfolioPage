@@ -2,7 +2,7 @@
   <cdk-virtual-scroll-viewport itemSize="100" class="example-viewport" [ngStyle]="{'height': getContentHeight() + 'px'}" (scroll)="scrollDetected(virtualScroll)">
     <ng-container *ngIf="!selectedProject">
       <ng-container *ngFor="let project of allProjects">
-        <div class="text-center w-100">
+        <div class="text-center" style="display: inline-block">
           <app-single-project [project]="project"></app-single-project>
         </div>
       </ng-container>

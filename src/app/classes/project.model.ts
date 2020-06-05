@@ -9,6 +9,5 @@ export class Project {
     public desc: string,
     public stack: ProjectStack = null,
     public idName: string,
-    public descHTML: string = null,
   ) {}
 }
