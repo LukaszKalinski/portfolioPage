@@ -1,9 +1,11 @@
 import { Component, OnInit, Input, AfterViewChecked } from '@angular/core';
+import { trigger, state, style, transition, animate, query, group } from '@angular/animations';
+
 import {
   faChevronCircleLeft,
   faChevronCircleRight
    } from '@fortawesome/free-solid-svg-icons';
-import { trigger, state, style, transition, animate, query, group } from '@angular/animations';
+
 import { WindowSizeSevice } from 'src/app/services/window-size.service';
 
 @Component({
@@ -52,16 +54,16 @@ import { WindowSizeSevice } from 'src/app/services/window-size.service';
 })
 
 export class CarouselComponent implements OnInit, AfterViewChecked {
-  @Input() stringArr: string[];
   @Input() identifierDOM: string;
-  page = 0;
-  slides: string[] = [];
-  elementsNum = 1;
-  rightIcon = faChevronCircleRight;
-  leftIcon = faChevronCircleLeft;
+  @Input() stringArr: string[];
   carouselImgName: string;
   carouselRowName: string;
   animationSite: string;
+  slides: string[] = [];
+  page = 0;
+  elementsNum = 1;
+  rightIcon = faChevronCircleRight;
+  leftIcon = faChevronCircleLeft;
 
   constructor(
     private windowSizeService: WindowSizeSevice,

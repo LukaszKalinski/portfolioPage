@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Subscription } from 'rxjs';
 
 import { Project } from 'src/app/classes/project.model';
+
 import { WindowSizeSevice } from 'src/app/services/window-size.service';
-import { Subscription } from 'rxjs';
-import { trigger, state, style, transition, animate } from '@angular/animations';
 import { MenuService } from 'src/app/services/menu.service';
 
 @Component({

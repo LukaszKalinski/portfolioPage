@@ -1,14 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Project } from 'src/app/classes/project.model';
-import { ProjectStack } from 'src/app/classes/stack.model';
-import { WindowSizeSevice } from 'src/app/services/window-size.service';
-import { MenuService } from 'src/app/services/menu.service';
-import { Subscription } from 'rxjs';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
+import { Subscription } from 'rxjs';
+
+import { Project } from 'src/app/classes/project.model';
+import { ProjectStack } from 'src/app/classes/stack.model';
 import {
   faArrowCircleUp
    } from '@fortawesome/free-solid-svg-icons';
+
+import { WindowSizeSevice } from 'src/app/services/window-size.service';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -31,10 +33,10 @@ import {
 export class PortfolioComponent implements OnInit {
   @ViewChild(CdkVirtualScrollViewport) virtualScroll: CdkVirtualScrollViewport;
   allProjects: Project[] = [];
+  isScrolled = false;
+  upIcon = faArrowCircleUp;
   selectedProject: Project;
   isSelectedProjectChanged: Subscription;
-  upIcon = faArrowCircleUp;
-  isScrolled = false;
 
   constructor(
     private windowSizeService: WindowSizeSevice,
@@ -42,13 +44,24 @@ export class PortfolioComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.subscriptionsOnInit();
+    this.setProjects();
+  }
+
+  subscriptionsOnInit() {
+    this.selectedProject = this.menuService.getSelectedProject();
+    this.isSelectedProjectChanged = this.menuService.isSelectedProjectChanged.subscribe((project) => {
+      this.selectedProject = project;
+    });
+  }
+
+  setProjects() {
     this.allProjects = [
       new Project(
         'Portfolio Page',
-        ['https://imgbbb.com/images/2020/06/02/Przechwytywanie.png'],
+        ['https://imgbbb.com/images/2020/06/05/portfolio.png'],
         'https://github.com/LukaszKalinski/portfolioPage',
         'https://lukkalinskiportfolio.web.app',
-        // tslint:disable-next-line: max-line-length
         'This is my personal page, where You can find everything about my person and projects which I have created.',
         new ProjectStack(
           true, // isHTML: boolean
@@ -88,10 +101,6 @@ export class PortfolioComponent implements OnInit {
         'rpggame'
       ),
     ];
-    this.selectedProject = this.menuService.getSelectedProject();
-    this.isSelectedProjectChanged = this.menuService.isSelectedProjectChanged.subscribe((project) => {
-      this.selectedProject = project;
-    });
   }
 
   getContentHeight() {

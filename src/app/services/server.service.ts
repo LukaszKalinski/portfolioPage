@@ -1,7 +1,8 @@
 import { FormGroup } from '@angular/forms';
-import { Email } from '../classes/email.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
+import { Email } from '../classes/email.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable()

@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
+
 import { WindowSizeSevice } from 'src/app/services/window-size.service';
 import { ServerService } from 'src/app/services/server.service';
 
@@ -49,6 +50,19 @@ export class ContactComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.subscriptionsOnInit();
+    this.subscribeForm();
+  }
+
+  subscriptionsOnInit() {
+    const width = this.windowSizeService.getWindowSize().width;
+    this.isSmallerWindow(width);
+    this.isWidthSub = this.windowSizeService.isWindowSizeChanged.subscribe(() => {
+      this.isSmallerWindow(width);
+    });
+  }
+
+  subscribeForm() {
     this.messageForm = new FormGroup({
       firstName: new FormControl(null, [Validators.required]),
       lastName: new FormControl(null, [Validators.required]),
@@ -57,10 +71,6 @@ export class ContactComponent implements OnInit {
       message: new FormControl(null, [Validators.required]),
     });
 
-    this.isSmallerWindow(this.windowSizeService.getWindowSize().width);
-    this.isWidthSub = this.windowSizeService.isWindowSizeChanged.subscribe(() => {
-      this.isSmallerWindow(this.windowSizeService.getWindowSize().width);
-    });
   }
 
   onClear() {

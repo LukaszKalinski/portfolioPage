@@ -20,6 +20,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class MainFooterComponent implements OnInit {
+  footerMsg = 'Created by Lukasz Kalinski';
 
   constructor() { }
 

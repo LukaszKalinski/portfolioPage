@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Subscription } from 'rxjs';
 
 import { WindowSizeSevice, WindowSize } from './services/window-size.service';
 import { MenuService } from './services/menu.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -36,11 +36,11 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   isFullyLoaded = false;
+  startAnimation = false;
   title = 'Lukasz Kalinski Portfolio';
   selectedItem: string;
   selectedItemSub: Subscription;
   loadingPerc = 0;
-  startAnimation = false;
 
   constructor(
     private windowSizeService: WindowSizeSevice,

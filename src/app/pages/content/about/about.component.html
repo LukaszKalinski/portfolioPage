@@ -6,10 +6,10 @@
       </div>
       <div class="col-8 m-0 p-0">
         <div class="cont">
-          <p>{{ text1 }}</p>
-          <p>{{ text2 }}</p>
-          <p>{{ text3 }}</p>
-          <p>{{ text4 }}</p>
+          <p>{{ firstMessage }}</p>
+          <p>{{ secondMessage }}</p>
+          <p>{{ thirddMessage }}</p>
+          <p>{{ fourthMessage }}</p>
           <div class="text-center" *ngIf="!isLoaded">
             <ng-container *ngFor="let image of technologyImg">
               <img class="technimg" [src]="image" style="filter: grayscale(100%)">
@@ -20,7 +20,7 @@
                 <img class="technimg" [src]="image">
               </ng-container>
             </div>
-          <p>{{ text5 }}</p>
+          <p>{{ fifthMessage }}</p>
           <div class="btn-group mb-2">
             <button class="btn btn-primary bigbutton" (click)="onShowEducation()">{{ showEducation ? 'Hide Education' : 'Show Education'}}</button>
             <button class="btn btn-success bigbutton" (click)="onShowExperience()">{{ showExperience ? 'Hide Experience' : 'Show Experience'}}</button>
@@ -35,10 +35,10 @@
     <div class="row m-0 p-0" *ngIf="isSmallerWindow" [@thingsappear]>
       <div class="col m-0 p-0">
         <div class="cont">
-          <p>{{ text1 }}</p>
-          <p>{{ text2 }}</p>
-          <p>{{ text3 }}</p>
-          <p>{{ text4 }}</p>
+          <p>{{ firstMessage }}</p>
+          <p>{{ secondMessage }}</p>
+          <p>{{ thirddMessage }}</p>
+          <p>{{ fourthMessage }}</p>
           <div class="text-center" *ngIf="!isLoaded">
             <ng-container *ngFor="let image of technologyImg">
               <img class="technimg" [src]="image" style="filter: grayscale(100%)">
@@ -49,7 +49,7 @@
                 <img class="technimg" [src]="image">
               </ng-container>
             </div>
-          <p>{{ text5 }}</p>
+          <p>{{ fifthMessage }}</p>
           <div class="btn-group mb-2">
             <button class="btn btn-primary" (click)="onShowEducation()" [ngStyle]="{'width': isSmallestWindow ? '30%' : '105px'}">{{ showEducation ? 'Hide Edu.' : 'Show Edu.'}}</button>
             <button class="btn btn-success" (click)="onShowExperience()" [ngStyle]="{'width': isSmallestWindow ? '30%' : '105px'}">{{ showExperience ? 'Hide Exp.' : 'Show Exp.'}}</button>

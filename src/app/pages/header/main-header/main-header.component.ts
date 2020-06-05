@@ -17,6 +17,10 @@ export class MainHeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.subscriptionsOnInit();
+  }
+
+  subscriptionsOnInit() {
     this.isMobileMenu(this.windowSizeService.getWindowSize().width);
     this.isWidthSub = this.windowSizeService.isWindowSizeChanged.subscribe(() => {
       this.isMobileMenu(this.windowSizeService.getWindowSize().width);

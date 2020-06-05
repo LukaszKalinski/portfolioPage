@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Subscription } from 'rxjs';
+
 import { MenuService } from 'src/app/services/menu.service';
 import { WindowSizeSevice } from 'src/app/services/window-size.service';
 

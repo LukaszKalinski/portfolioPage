@@ -10,7 +10,6 @@ import {
 
 import { WindowSizeSevice } from 'src/app/services/window-size.service';
 
-
 @Component({
   selector: 'app-header-icons',
   templateUrl: './header-icons.component.html',
@@ -44,6 +43,9 @@ import { WindowSizeSevice } from 'src/app/services/window-size.service';
   ]
 })
 export class HeaderIconsComponent implements OnInit {
+  fbUrl = 'https://www.facebook.com/profile.php?id=100000462866542';
+  linkedInUrl = 'https://www.linkedin.com/in/lukkalinski';
+  googleUrl = 'https://www.google.com';
   facebookIcon = faFacebook;
   linkedInIcon = faLinkedin;
   googleIcon = faGoogle;
@@ -68,13 +70,13 @@ export class HeaderIconsComponent implements OnInit {
   onClickIcon(name: string) {
     switch (name) {
       case 'facebook':
-        window.open('https://www.facebook.com/profile.php?id=100000462866542', '_blank');
+        window.open(this.fbUrl, '_blank');
         break;
       case 'linkedIn':
-        window.open('https://www.linkedin.com/in/lukkalinski', '_blank');
+        window.open(this.linkedInUrl, '_blank');
         break;
       case 'google':
-        window.open('https://www.google.com', '_blank');
+        window.open(this.googleUrl, '_blank');
         break;
       default:
         break;

@@ -45,8 +45,8 @@ export class HeaderMenuComponent implements OnInit {
   isSmallerMenu = false;
   isSmallestMenu = false;
   isMobileMenu = false;
-  isWidthSub: Subscription;
   isContactClicked = false;
+  isWidthSub: Subscription;
   homeIcon = faHome;
   userIcon = faUser;
   projectIcon = faTasks;

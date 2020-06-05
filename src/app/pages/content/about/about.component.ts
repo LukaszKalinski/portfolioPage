@@ -1,11 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { trigger, transition, query, style, stagger, animate, keyframes, state } from '@angular/animations';
-import { WindowSizeSevice } from 'src/app/services/window-size.service';
+import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 import { Subscription } from 'rxjs';
+
 import {
   faArrowCircleUp
    } from '@fortawesome/free-solid-svg-icons';
-import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
+
+import { WindowSizeSevice } from 'src/app/services/window-size.service';
 
 @Component({
   selector: 'app-about',
@@ -45,15 +47,15 @@ export class AboutComponent implements OnInit {
   showEducation = false;
   showExperience = false;
   showOther = false;
-  upIcon = faArrowCircleUp;
   isScrolled = false;
   technologyImg: string[] = [];
-  text1 = 'My name is Lukasz Kalinski and I am pretending to become Junior Front-End Developer.';
-  text2 = 'Currently I am working as a Junior ServiceNow Developer, where I am using HTML, CSS, JS, Angular.';
+  upIcon = faArrowCircleUp;
+  firstMessage = 'My name is Lukasz Kalinski and I am pretending to become Junior Front-End Developer.';
+  secondMessage = 'Currently I am working as a Junior ServiceNow Developer, where I am using HTML, CSS, JS, Angular.';
   // tslint:disable-next-line: max-line-length
-  text3 = 'On a personal level, I am highly-motivated, result oriented, self-driven, hard-working, fast learner and constantly seeking to improve my skills.';
-  text4 = 'Below is a list of technologies, which I am mostly using:';
-  text5 = 'I prefer to work with NoSQL databases using JSON format files.';
+  thirddMessage = 'On a personal level, I am highly-motivated, result oriented, self-driven, hard-working, fast learner and constantly seeking to improve my skills.';
+  fourthMessage = 'Below is a list of technologies, which I am mostly using:';
+  fifthMessage = 'I prefer to work with NoSQL databases using JSON format files.';
 
   constructor(
     private windowSizeService: WindowSizeSevice,
@@ -65,9 +67,10 @@ export class AboutComponent implements OnInit {
   }
 
   subscriptionsOnInit() {
-    this.isSmallerWindows(this.windowSizeService.getWindowSize().width);
+    const width = this.windowSizeService.getWindowSize().width;
+    this.isSmallerWindows(width);
     this.isSmallerWindowSub = this.windowSizeService.isWindowSizeChanged.subscribe(() => {
-      this.isSmallerWindows(this.windowSizeService.getWindowSize().width);
+      this.isSmallerWindows(width);
     });
     this.reloadImages();
   }
@@ -100,14 +103,15 @@ export class AboutComponent implements OnInit {
   }
 
   setTechnologyImages() {
-    this.technologyImg.push('https://cdn.iconscout.com/icon/premium/png-512-thumb/html5-3-502526.png');
-    this.technologyImg.push('https://cdn.iconscout.com/icon/free/png-512/css3-9-1175237.png');
-    this.technologyImg.push('https://cdn.iconscout.com/icon/free/png-512/sass-226054.png');
-    this.technologyImg.push('https://cdn.iconscout.com/icon/free/png-512/bootstrap-226077.png');
-    this.technologyImg.push('https://cdn.iconscout.com/icon/free/png-512/angular-2038881-1720094.png');
-    this.technologyImg.push('https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png');
-    this.technologyImg.push('https://cdn.iconscout.com/icon/free/png-512/typescript-1174965.png');
-    this.technologyImg.push('https://cdn.iconscout.com/icon/free/png-512/node-js-2-1174936.png');
+    const a = this.technologyImg;
+    a.push('https://cdn.iconscout.com/icon/premium/png-512-thumb/html5-3-502526.png');
+    a.push('https://cdn.iconscout.com/icon/free/png-512/css3-9-1175237.png');
+    a.push('https://cdn.iconscout.com/icon/free/png-512/sass-226054.png');
+    a.push('https://cdn.iconscout.com/icon/free/png-512/bootstrap-226077.png');
+    a.push('https://cdn.iconscout.com/icon/free/png-512/angular-2038881-1720094.png');
+    a.push('https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png');
+    a.push('https://cdn.iconscout.com/icon/free/png-512/typescript-1174965.png');
+    a.push('https://cdn.iconscout.com/icon/free/png-512/node-js-2-1174936.png');
   }
 
   onShowEducation() {
