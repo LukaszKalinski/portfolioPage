@@ -103,11 +103,4 @@ export class SingleProjectComponent implements OnInit {
       this.isShowBtn = false;
     }
   }
-
-  onHover(event: Event) {
-    if (this.isLoaded) {
-      this.isHover = true;
-      this.isShowBtn = true;
-    }
-  }
 }
